@@ -94,7 +94,7 @@ data = {
 # 验证方式数据
 data2 = {
     "act": "check",
-    "user_id": "2019405A322"
+    "user_id": "账号"
 }
 
 file = open('c://autoEduLogin//user.txt', 'r')

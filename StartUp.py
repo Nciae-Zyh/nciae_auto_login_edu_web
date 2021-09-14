@@ -43,10 +43,10 @@ if is_admin():
     while 1:
         ret = ui.choicebox(msg='', title='', choices=CT)
         if ret == CT[0]:
-            str_in = 'schtasks /create /tn 开机自动登录电信校园网 /tr ' + os.getcwd() + '\\CTCC_auto_login.py' + ' /sc onlogon'
+            str_in = 'schtasks /create /tn 开机自动登录电信校园网 /tr ' + os.getcwd() + '\\CTCC_auto_login.exe' + ' /sc onlogon'
             break
         elif ret == CT[1]:
-            str_in = 'schtasks /create /tn 开机自动登录连通校园网 /tr ' + os.getcwd() + '\\CUCC_auto_login.py' + ' /sc onlogon'
+            str_in = 'schtasks /create /tn 开机自动登录连通校园网 /tr ' + os.getcwd() + '\\CUCC_auto_login.exe' + ' /sc onlogon'
             break
         else:
             print('请选择您的运营商！')

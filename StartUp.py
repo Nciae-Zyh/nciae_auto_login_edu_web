@@ -24,7 +24,7 @@ def is_admin():
 
 # 以管理员权限运行创建计划任务
 if is_admin():
-    Msg = '欢迎使用北华航天工业学院连通网络自动登录系统'
+    Msg = '欢迎使用北华航天工业学院网络自动登录系统'
     Tittle = '自动登录系统'
     Fields = ['学号', '密码']
     ret = ui.multpasswordbox(Msg, Tittle, Fields)

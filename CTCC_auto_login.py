@@ -1,7 +1,8 @@
+import os
 import urllib
-
 import requests
 import json
+import easygui as ui
 from urllib import request
 import time
 
@@ -47,10 +48,12 @@ data['upass'] = user['password']
 def test_WiFi():
     try:
         response = requests.post(url, data=data, headers=header).status_code
+        return True
     except:
-        print("请检查是否开启校园网WiFi自动登录！")
-        return False
-    return True
+        if not ui.ccbox(msg='请检查是否开启校园网WiFi自动登录！', title='不正经的，不应该出现的提示', choices=('结束', '重试')):
+            test_WiFi()
+        else:
+            return False
 
 
 url1 = "http://www.baidu.com/"
@@ -60,13 +63,12 @@ def test_username_and_password():
     try:
         response = urllib.request.urlopen('https://www.baidu.com')
         response.read().decode('utf8')
+        return True
     except:
-        print('请检查账号密码是否输入正确！')
+        ui.msgbox(msg='请检查账号密码是否输入正确！在user.txt中查看', title='正经的提示', ok_button='ok！')
+        os.system('explorer C:\\autoEduLogin')
         return False
-    return True
 
 
 if test_WiFi() and test_username_and_password():
-    print("登陆成功！感谢您的使用！——by小赵")
-
-input("输入回车继续！")
+    ui.msgbox(msg='登陆成功！感谢您的使用！——by小赵', title='正经的提示', ok_button='ok！')
